@@ -39,6 +39,7 @@ body {
 .hero {
     background: red;
     padding-top: 90px;
+    padding-bottom: 87px;
 }
 
 .song-container {
