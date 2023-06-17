@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Arial;
+    font-family: Poppins;
     box-sizing: border-box;
 }
 
@@ -14,8 +14,9 @@ body {
 /*upper nav*/
 .upper-nav-container {
     width: 100%;
+    height: 64px;
     background-color: rgb(13, 13, 13);
-    padding: 30px 40px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -25,6 +26,7 @@ body {
 .upper-nav-container a i {
     color: white;
     padding-left: 40px;
+    font-size: 24px;
 }
 
 .upper-nav-container a i:hover {
@@ -37,32 +39,100 @@ body {
 
 /*middle section*/
 .hero {
-    background: red;
-    padding-top: 90px;
-    padding-bottom: 87px;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 
+/*Song container*/
 .song-container {
     background-color: rgb(24, 23, 23);
-    padding: 30px 20px;
-    border-bottom: 1px solid gray;  
+    padding: 30px 60px;
+    border-bottom: 1px solid rgb(30, 27, 27);  
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.song-image-continer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.song-name-container h2 {
+    margin-bottom: 18px;
+}
+
+.song-name-container p {
+    color: gray;
+    font-size: 14px;
+}
+
+.song-stats {
+    display: flex;
+    align-items: center;    
+}
+
+.play-pause-button-container a i {
+    margin-right: 42px;
+    cursor: pointer;
+}
+
+.fa-play,
+.fa-pause {
+    color: gray;
+}
+
+.fa-play:hover,
+.fa-pause:hover {
+    opacity: 0.6;
+}
+
+@media(max-width: 700px) {
+    .song-image-continer img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+    }
+
+    .song-name-container h2 {
+        font-size: 18px;
+    }
+
+    .song-name-container p {
+        font-size: 12px;
+    }
+
+    .song-container {
+        padding: 20px;
+    }
+
+    .play-pause-button-container a i {
+        margin-right: 15px;
+    }
 }
 
 /*lower nav*/
 .lower-nav-container {
+    height: 64px;
     width: 100%;
-    padding: 28px 40px;
+    padding: 18px 40px;
     background-color: rgb(13, 13, 13);
     display: flex;
     align-items: center;
     justify-content: space-around;
     position: fixed;
-    top: 709px;
+    bottom: 0px;
 }
 
 .lower-nav-container a i {
     color: white;
+    font-size: 24px;
 }
 
 .lower-nav-container a i:hover {
