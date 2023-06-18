@@ -61,7 +61,9 @@ const trackList = [
     }
 ];
 
-function renderTrackList() {
+
+//render the music list on the DOM
+function renderTrackList(index) {
     let trackListHTML = "";
 
     for(let i = 0; i < trackList.length; i++) {
@@ -82,29 +84,56 @@ function renderTrackList() {
                     </div>
                 </div>
                 
-                <div class="play-pause-button-container">
-                    <a  onClick="togglePlayPauseButton()"><i class="fa-solid fa-play fa-3x" id="play-pause-icon"></i></a>
+                <div class="play-pause-button-container js-play-pause-button-container" id="play-pause-button-container">
+                    <a><i class="fa-solid fa-play fa-3x js-play-pause-icon"></i></a>
                 </div>
             </div>
-        `;
+        `; 
 
         trackListHTML += html;
+        
     }
 
     document.querySelector('.js-music-list')
                 .innerHTML = trackListHTML;
 }
 
+//calling the render function
 renderTrackList();
 
-const playPauseButton = document.getElementById("play-pause-icon");
 
-function togglePlayPauseButton() {
-   if(playPauseButton.classList.contains("fa-pause")) {
-        playPauseButton.classList.remove("fa-pause");
-        playPauseButton.classList.add("fa-play");
-   } else {
-        playPauseButton.classList.add("fa-pause");
-        playPauseButton.classList.remove("fa-play");
-   }
+
+//toggle PlayPause button 
+let activeButtonIndex = null;
+document.querySelectorAll(".js-play-pause-icon").forEach((playPauseButton,index) => {
+    playPauseButton.addEventListener('click', () => {
+        console.log(`Click ${index}`);
+
+        if(index === activeButtonIndex) {
+            playPauseButton.classList.remove("fa-pause");
+            playPauseButton.classList.add("fa-play");
+            activeButtonIndex = null;
+        } else {
+            pausePreviousSong();
+            playPauseButton.classList.add("fa-pause");
+            playPauseButton.classList.remove("fa-play");
+            activeButtonIndex = index;
+        }
+
+
+    })
+});
+
+function pausePreviousSong() {
+    if (activeButtonIndex !== null) {
+        const previousButton = document.querySelectorAll(".js-play-pause-icon")[activeButtonIndex];
+        previousButton.classList.remove("fa-pause");
+        previousButton.classList.add("fa-play");
+        console.log("this song is pause");
+    }
+}
+
+//make a track to play and pause
+function playPauseTrack() {
+    
 }

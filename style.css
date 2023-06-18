@@ -66,6 +66,16 @@ body {
 
 .song-name-container h2 {
     margin-bottom: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.song-name-container h2:hover {
+    color: gray;
+}
+
+.song-name-container h2:active {
+    color: white;
 }
 
 .song-name-container p {
