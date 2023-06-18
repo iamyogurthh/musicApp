@@ -1,3 +1,4 @@
+/*
 const trackList = [
     {
         trackName: "Circle",
@@ -60,6 +61,45 @@ const trackList = [
         img: "whisper"
     }
 ];
+*/
+const trackList = [];
+
+//api handel
+const url = 'https://itunes.apple.com/search?term=blackpink';
+fetch(url)
+    .then((Response) => Response.json())
+    .then((data) => {
+        console.log(data.results);
+        const artists = data.results;
+        return artists.map(result=>{
+            
+            /*
+            const article = document.createElement("article"),
+                artists = document.createElement('p'),
+                song = document.createElement('h4'),
+                img = document.createElement('img'),
+                audio = document.createElement('audio'),
+                audioSource = document.createElement('source')
+
+            console.log(result); 
+
+            artists.innerHTML = result.artistName;
+            song.innerHTML = result.trackName;
+            img.src = result.artworkUrl100;
+            audioSource.src = result.previewUrl;
+            audio.controls = true;
+
+            article.appendChild(img);
+
+            article.appendChild(img);
+            article.appendChild(artists);
+            article.appendChild(song);
+            article.appendChild(audio);
+            */
+        }) 
+        
+    })
+    .catch(error=>console.log("Request fail:", error))
 
 
 //render the music list on the DOM
