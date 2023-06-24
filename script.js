@@ -2,26 +2,26 @@ const trackList = [];
 
 //api handel
 const url = `https://itunes.apple.com/search?term=blackpink`;
-fetch(url)
-    .then((Response) => Response.json())
-    .then((data) => {
-        console.log(data.results);
-        const artists = data.results;
-        artists.forEach((result) => {
-            const trackObject = {
-                trackName: result.trackName,
-                artistName: result.artistName,
-                trackDuration: result.trackDuration,
-                img: result.artworkUrl100,
-                genre: result.primaryGenreName
-            };
+        fetch(url)
+            .then((Response) => Response.json())
+            .then((data) => {
+                console.log(data.results);
+                const artists = data.results;
+                artists.forEach((result) => {
+                    const trackObject = {
+                        trackName: result.trackName,
+                        artistName: result.artistName,
+                        trackDuration: result.trackDuration,
+                        img: result.artworkUrl100,
+                        genre: result.primaryGenreName
+                    };
 
-            trackList.push(trackObject);
-        });
+                    trackList.push(trackObject);
+                });
 
-        renderTrackList();
-    })
-    .catch(error => console.log("Request fail:", error));
+                renderTrackList();
+            })
+            .catch(error => console.log("Request fail:", error));
 
 // render the music list on the DOM
 function renderTrackList() {
@@ -46,7 +46,7 @@ function renderTrackList() {
                 </div>
                 
                 <div class="play-pause-button-container js-play-pause-button-container" id="play-pause-button-container-${i}">
-                    <a><i class="fa-solid fa-play fa-3x js-play-pause-icon" id="play-pause-icon-${i}"></i></a>
+                    <a><i class="fa-solid fa-play fa-2x js-play-pause-icon" id="play-pause-icon-${i}"></i></a>
                 </div>
             </div>
         `;
@@ -98,3 +98,6 @@ function playTrack(index) {
 
 // calling the render function
 renderTrackList();
+
+
+

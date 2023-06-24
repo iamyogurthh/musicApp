@@ -14,28 +14,55 @@
 <body>
     <header class="header_nav">
         <nav class="upper-nav-container">
-            <a href="#"><i class="fa-regular fa-bell"></i></a>
-            <a href="#"><i class="fa-solid fa-gear"></i></a>
+            <div>
+                <h1 style="color: white;">App Logo</h1>
+            </div>
+            <div class="search-box-for-lg-screen-container">
+                <input type="text" placeholder="Search a song" class="input-box-for-lg-screen js-input-box">
+                <button class="search-button-for-lg-screen js-search-button">Search</button>
+            </div>
+            <div class="upper-nav-icon-container">
+                <a href="#"><i class="fa-regular fa-bell"></i></a>
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+            </div>
         </nav>
+        
     </header>
     <section class="hero">
         <nav class="sider-bar">
             <ul>
-                <li>HOME</li>
-                <li>Library</li>
-                <li>Option</li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Library</a></li>
             </ul>
         </nav>
         <div class="music-list-container js-music-list"></div>
 
-        <!--Playing music box-->
+        <!--Currently playing music box-->
         <section class="currently-playing-track-container">
-            <div class="currently-playing-track-img-container">
-                <img src="images/song-cover-img/circle.png" class="currently-playing-track-img">
-            </div>
+            
             <div class="song-props">
-                <h2>Song name - Artist name</h2>
-                <input type="range" value="0" id="progress-bar">
+                <div class="currently-playing-track-img-container">
+                    <img src="images/song-cover-img/circle.png" class="currently-playing-track-img">
+                </div>
+                <div>
+                    <h2>Now Playing: Song name - Artist name</h2>
+                    <input type="range" value="0" id="progress-bar">
+                </div>
+                
+            </div>
+            <div class="control">
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-play fa-2x js-play-pause-icon" id="play-pause-icon-${i}"></i>
+                <!--<i class="fa-regular fa-circle-pause"></i>-->
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="volume-control">
+                <i class="fa-solid fa-volume-xmark"></i>
+                <!--<i class="fa-solid fa-volume-off"></i>
+                <i class="fa-solid fa-volume-low"></i>
+                <i class="fa-solid fa-volume-high"></i>-->
             </div>
         </section>
     </section>
@@ -45,9 +72,10 @@
         <nav class="lower-nav-container">
             <a href="index.html"><i class="fa-sharp fa-solid fa-house"></i></a>
             <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
         </nav>
     </footer>
-   <script src="script/script.js"></script>
+   <script src="script.js"></script>
+   <script src="search.js"></script>
 </body>
 </html>
