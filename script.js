@@ -64,6 +64,7 @@ function renderTrackList() {
             if (playPauseButton.classList.contains("fa-pause")) {
                 playPauseButton.classList.remove("fa-pause");
                 playPauseButton.classList.add("fa-play");
+                activeButtonIndex = null;
                 pauseTrack();
             } else {
                 pausePreviousSong();
@@ -72,6 +73,8 @@ function renderTrackList() {
                 activeButtonIndex = index;
                 playTrack(index);
             }
+
+            
         });
     });
 }
@@ -99,5 +102,24 @@ function playTrack(index) {
 // calling the render function
 renderTrackList();
 
+const nowPlayButtonElement = document.getElementById("nowPlayButton");
 
+nowPlayButtonElement.addEventListener("click", () => {
+    console.log("click");
+    toggleNowPlayButton();
+});
 
+function toggleNowPlayButton() {
+    if(nowPlayButtonElement.classList.contains("fa-circle-play")) {
+        nowPlayButtonElement.classList.remove("fa-circle-play");
+        nowPlayButtonElement.classList.add("fa-circle-pause");
+    } else {
+        nowPlayButtonElement.classList.remove("fa-circle-pause");
+        nowPlayButtonElement.classList.add("fa-circle-play");
+    }
+}
+
+/*
+    if a song is playing 
+        change the play button to pause button
+*/

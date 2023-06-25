@@ -39,23 +39,21 @@
         <div class="music-list-container js-music-list"></div>
 
         <!--Currently playing music box-->
-        <section class="currently-playing-track-container">
-            
+        <section class="currently-playing-track-container"> 
             <div class="song-props">
                 <div class="currently-playing-track-img-container">
                     <img src="images/song-cover-img/circle.png" class="currently-playing-track-img">
                 </div>
                 <div>
-                    <h2>Now Playing: Song name - Artist name</h2>
+                    <h2>Song name - Artist name</h2>
                     <input type="range" value="0" id="progress-bar">
                 </div>
-                
             </div>
             <div class="control">
-                <i class="fa-solid fa-chevron-left"></i>
-                <i class="fa-solid fa-play fa-2x js-play-pause-icon" id="play-pause-icon-${i}"></i>
+                <i class="fa-solid fa-circle-chevron-left"></i>
+                <i class="fa-solid fa-circle-play" id="nowPlayButton"></i>
                 <!--<i class="fa-regular fa-circle-pause"></i>-->
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-circle-chevron-right"></i>
             </div>
 
             <div class="volume-control">
